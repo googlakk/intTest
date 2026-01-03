@@ -1,33 +1,34 @@
 
 import React from 'react';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../../LanguageContext';
+import { IMAGES } from '../../constants/assets';
 
 const Gallery: React.FC = () => {
   const { t } = useLanguage();
 
   const photos = [
     {
-      url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
+      url: IMAGES.GALLERY.COLLABORATION,
       span: "md:col-span-2 md:row-span-2",
       title: "Collaboration"
     },
     {
-      url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800",
+      url: IMAGES.GALLERY.DISCOVERY,
       span: "md:col-span-1 md:row-span-1",
       title: "Discovery"
     },
     {
-      url: "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&q=80&w=800",
+      url: IMAGES.GALLERY.ATHLETICS,
       span: "md:col-span-1 md:row-span-1",
       title: "Athletics"
     },
     {
-      url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
+      url: IMAGES.GALLERY.CREATIVITY,
       span: "md:col-span-1 md:row-span-2",
       title: "Creativity"
     },
     {
-      url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800",
+      url: IMAGES.GALLERY.MENTORSHIP,
       span: "md:col-span-1 md:row-span-1",
       title: "Mentorship"
     }
@@ -43,12 +44,12 @@ const Gallery: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[700px]">
           {photos.map((photo, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className={`relative group overflow-hidden rounded-[2rem] shadow-lg ${photo.span}`}
             >
-              <img 
-                src={photo.url} 
+              <img
+                src={photo.url}
                 alt={photo.title}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />

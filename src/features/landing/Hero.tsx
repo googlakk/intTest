@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../../LanguageContext';
+import { IMAGES } from '../../constants/assets';
 
 interface CounterProps {
   end: number;
@@ -65,8 +66,8 @@ const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-end pb-12 sm:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1541339907198-e08756ebafe1?auto=format&fit=crop&q=90&w=2000" 
+        <img
+          src="https://images.unsplash.com/photo-1541339907198-e08756ebafe1?auto=format&fit=crop&q=90&w=2000"
           alt="Modern School Campus"
           className="w-full h-full object-cover animate-[subtle-zoom_20s_infinite_alternate]"
         />
@@ -82,10 +83,10 @@ const Hero: React.FC = () => {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col space-y-12">
-          
+
           <div className="max-w-3xl space-y-6">
             <h1 className="text-white text-5xl sm:text-7xl font-light leading-[1.1] tracking-tight">
-              {t.hero.title1} <br/>
+              {t.hero.title1} <br />
               <span className="font-bold italic">{t.hero.title2}</span>
             </h1>
             <p className="text-white/70 text-lg sm:text-xl font-light max-w-xl">
@@ -100,7 +101,7 @@ const Hero: React.FC = () => {
               </div>
               <div className="text-[10px] text-white/50 uppercase tracking-[0.2em] font-bold">{t.hero.stat1}</div>
             </div>
-            
+
             <div className="p-8 sm:p-12 text-center text-white bg-black/20 group hover:bg-black/30 transition-colors">
               <div className="text-4xl sm:text-5xl font-light mb-3 flex justify-center">
                 <Counter end={450} suffix="+" />

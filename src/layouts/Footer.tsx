@@ -1,16 +1,26 @@
 
 import React from 'react';
 import { Instagram, Facebook, Youtube, Twitter, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-white pt-24 pb-12">
+    <footer className="bg-white pt-24 pb-12 relative overflow-hidden">
+      {/* Circuit Board Oyu Marquee */}
+      <div className="absolute top-0 left-0 w-full h-[60px] overflow-hidden opacity-10 pointer-events-none">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {/* Repeated for seamless loop */}
+          {[...Array(10)].map((_, i) => (
+            <img key={i} src="/circuit-oyu.svg" className="h-[60px] w-auto inline-block" alt="" />
+          ))}
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          
+
           {/* Logo Column */}
           <div className="space-y-8">
             <div className="flex flex-col space-y-4">
@@ -35,11 +45,11 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold text-[#0A192F] mb-6">{t.footer.menu}</h4>
             <ul className="space-y-4 text-sm text-gray-600 font-medium">
-              <li><a href="#" className="hover:text-[#0A192F]">{t.nav.about}</a></li>
-              <li><a href="#" className="hover:text-[#0A192F]">{t.nav.objects}</a></li>
-              <li><a href="#" className="hover:text-[#0A192F]">{t.nav.businessCenter}</a></li>
-              <li><a href="#" className="hover:text-[#0A192F]">{t.nav.fitness}</a></li>
-              <li><a href="#" className="hover:text-[#0A192F]">{t.nav.live}</a></li>
+              <li><Link to="/about" className="hover:text-[#0A192F]">{t.nav.about}</Link></li>
+              <li><Link to="/academics" className="hover:text-[#0A192F]">{t.nav.objects}</Link></li>
+              <li><Link to="/admissions" className="hover:text-[#0A192F]">{t.nav.businessCenter}</Link></li>
+              <li><Link to="/facilities" className="hover:text-[#0A192F]">{t.nav.fitness}</Link></li>
+              <li><Link to="/news" className="hover:text-[#0A192F]">{t.nav.live}</Link></li>
             </ul>
           </div>
 
@@ -47,10 +57,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold text-[#0A192F] mb-6">{t.footer.useful}</h4>
             <ul className="space-y-4 text-sm text-gray-600 font-medium">
-              <li><a href="#" className="hover:text-[#0A192F]">{t.footer.vacancies}</a></li>
-              <li><a href="#" className="hover:text-[#0A192F]">{t.footer.procurement}</a></li>
-              <li><a href="#" className="hover:text-[#0A192F]">{t.footer.media}</a></li>
-              <li><a href="#" className="hover:text-[#0A192F]">{t.nav.contacts}</a></li>
+              <li><Link to="/about" className="hover:text-[#0A192F]">{t.footer.vacancies}</Link></li>
+              <li><Link to="/contact" className="hover:text-[#0A192F]">{t.footer.procurement}</Link></li>
+              <li><Link to="/news" className="hover:text-[#0A192F]">{t.footer.media}</Link></li>
+              <li><Link to="/contact" className="hover:text-[#0A192F]">{t.nav.contacts}</Link></li>
             </ul>
           </div>
 
@@ -78,9 +88,9 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="w-full max-w-md relative">
-            <input 
-              type="email" 
-              placeholder="Email" 
+            <input
+              type="email"
+              placeholder="Email"
               className="w-full bg-[#0A192F] text-white py-4 px-8 rounded-full text-sm placeholder:text-gray-400 focus:outline-none"
             />
             <button className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:translate-x-1 transition-transform">
@@ -96,7 +106,7 @@ const Footer: React.FC = () => {
 
 const ChevronRight = ({ size }: { size: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="m9 18 6-6-6-6"/>
+    <path d="m9 18 6-6-6-6" />
   </svg>
 );
 

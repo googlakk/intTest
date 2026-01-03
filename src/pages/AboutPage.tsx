@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../LanguageContext';
 import { Award, Globe, Shield, Users, Clock, Target } from 'lucide-react';
+import { IMAGES } from '../constants/assets';
 
 const AboutPage: React.FC = () => {
   const { t } = useLanguage();
@@ -16,17 +17,17 @@ const AboutPage: React.FC = () => {
   ];
 
   const leaders = [
-    { name: "Алиса Ибрагимова", role: "Директор школы", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" },
-    { name: "Марк Уильямс", role: "Академический советник", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400" },
-    { name: "Елена Кузнецова", role: "Глава методического совета", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" },
+    { name: "Алиса Ибрагимова", role: "Директор школы", img: IMAGES.ABOUT.LEADERS.ALISA },
+    { name: "Марк Уильямс", role: "Академический советник", img: IMAGES.ABOUT.LEADERS.MARK },
+    { name: "Елена Кузнецова", role: "Глава методического совета", img: IMAGES.ABOUT.LEADERS.ELENA },
   ];
 
   return (
     <div className="pt-20 bg-white min-h-screen">
       {/* Hero Header */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1541339907198-e08756ebafe1?auto=format&fit=crop&q=90&w=2000" 
+        <img
+          src={IMAGES.ABOUT.HERO_BG}
           alt="Intellect Pro Architecture"
           className="absolute inset-0 w-full h-full object-cover grayscale-[30%]"
         />
@@ -44,10 +45,10 @@ const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A192F] leading-tight">
-              Наша философия <br/> <span className="text-gray-400 font-light italic">и стремления</span>
+              Наша философия <br /> <span className="text-gray-400 font-light italic">и стремления</span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed font-light">
-              Мы верим, что образование — это не просто накопление знаний, а процесс открытия талантов. 
+              Мы верим, что образование — это не просто накопление знаний, а процесс открытия талантов.
               В Intellect Pro school мы создаем пространство, где академическая строгость встречается с творческой свободой.
             </p>
             <div className="grid grid-cols-2 gap-8">
@@ -74,9 +75,9 @@ const AboutPage: React.FC = () => {
       {/* Campus Heritage Image Section */}
       <section className="py-12 px-6 lg:px-10 max-w-7xl mx-auto">
         <div className="rounded-[3.5rem] overflow-hidden relative group">
-          <img 
-            src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=2000" 
-            alt="School Heritage" 
+          <img
+            src={IMAGES.ABOUT.CAMPUS_HERITAGE}
+            alt="School Heritage"
             className="w-full h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F]/80 to-transparent flex items-center p-12 md:p-24">
@@ -117,22 +118,22 @@ const AboutPage: React.FC = () => {
           <h2 className="text-3xl font-bold text-[#0A192F] uppercase tracking-[0.2em]">Международные стандарты</h2>
         </div>
         <div className="flex flex-wrap justify-center gap-12 opacity-40 hover:opacity-100 transition-opacity">
-           <div className="flex flex-col items-center space-y-2">
-             <Globe className="w-12 h-12" />
-             <span className="text-[10px] font-bold uppercase tracking-widest">IB World School</span>
-           </div>
-           <div className="flex flex-col items-center space-y-2">
-             <Award className="w-12 h-12" />
-             <span className="text-[10px] font-bold uppercase tracking-widest">Cambridge Assessment</span>
-           </div>
-           <div className="flex flex-col items-center space-y-2">
-             <Shield className="w-12 h-12" />
-             <span className="text-[10px] font-bold uppercase tracking-widest">CIS Member</span>
-           </div>
-           <div className="flex flex-col items-center space-y-2">
-             <Users className="w-12 h-12" />
-             <span className="text-[10px] font-bold uppercase tracking-widest">UNESCO Partner</span>
-           </div>
+          <div className="flex flex-col items-center space-y-2">
+            <Globe className="w-12 h-12" />
+            <span className="text-[10px] font-bold uppercase tracking-widest">IB World School</span>
+          </div>
+          <div className="flex flex-col items-center space-y-2">
+            <Award className="w-12 h-12" />
+            <span className="text-[10px] font-bold uppercase tracking-widest">Cambridge Assessment</span>
+          </div>
+          <div className="flex flex-col items-center space-y-2">
+            <Shield className="w-12 h-12" />
+            <span className="text-[10px] font-bold uppercase tracking-widest">CIS Member</span>
+          </div>
+          <div className="flex flex-col items-center space-y-2">
+            <Users className="w-12 h-12" />
+            <span className="text-[10px] font-bold uppercase tracking-widest">UNESCO Partner</span>
+          </div>
         </div>
       </section>
     </div>
