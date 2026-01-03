@@ -1,18 +1,24 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { pagesConfig } from '../constants/pagesConfig';
+import { getPagesConfig } from '../constants/pagesConfig';
+import { useLanguage } from '../LanguageContext';
 
 const KeepExploringBlock: React.FC<{ currentPage?: string }> = ({ currentPage }) => {
+    const { t } = useLanguage();
     const location = useLocation();
     const currentPath = location.pathname;
 
-    // Use the explicit prop if provided, otherwise fallback to path
-    // For homepage, we might want to manually pass "home" if "/" isn't in config
+    const pagesConfig = getPagesConfig(t);
     const dataKey = currentPage || currentPath;
     const pageData = pagesConfig[dataKey];
 
-    if (!pageData || !pageData.relatedLinks || pageData.relatedLinks.length === 0) {
+    // Find the section of type "cta-grid" which is our "Keep Exploring" block
+    const explorerSection = pageData?.sections?.find(s => s.type === 'cta-grid' && s.id === 'keep-exploring');
+    const items = explorerSection?.data?.items;
+    const title = explorerSection?.data?.title || "Keep Exploring";
+
+    if (!items || items.length === 0) {
         return null;
     }
 
@@ -20,12 +26,12 @@ const KeepExploringBlock: React.FC<{ currentPage?: string }> = ({ currentPage })
         <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-12 text-[#0A192F] tracking-tight">
-                    Keep Exploring
+                    {title}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {pageData.relatedLinks.map((link) => (
+                    {items.map((link, index) => (
                         <Link
-                            key={link.id}
+                            key={index}
                             to={link.link}
                             className="group relative h-96 overflow-hidden rounded-2xl shadow-lg cursor-pointer block"
                         >

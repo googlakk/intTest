@@ -145,7 +145,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
 
-            <h3 className="text-gray-400 uppercase text-xs font-bold tracking-widest mb-6">Useful links</h3>
+            <h3 className="text-gray-400 uppercase text-xs font-bold tracking-widest mb-6">{t.footer.useful}</h3>
             <div className="space-y-4 flex flex-col items-start">
               {usefulLinks.map((link, idx) => (
                 <button
@@ -184,8 +184,8 @@ const Navbar: React.FC = () => {
             <span>LinkedIn</span>
           </div>
           <div className="space-x-4">
-            <span>Privacy Policy</span>
-            <span>Child Safety</span>
+            <span>{t.footer.privacy}</span>
+            <span>{t.footer.childSafety}</span>
           </div>
         </div>
 

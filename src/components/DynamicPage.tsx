@@ -1,10 +1,13 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import PageBuilder from './PageBuilder';
-import { pagesConfig } from '../constants/pagesConfig';
+import { getPagesConfig } from '../constants/pagesConfig';
+import { useLanguage } from '../LanguageContext';
 
 const DynamicPage: React.FC = () => {
     const location = useLocation();
+    const { t } = useLanguage();
+    const pagesConfig = getPagesConfig(t);
     const config = pagesConfig[location.pathname];
 
     if (!config) {

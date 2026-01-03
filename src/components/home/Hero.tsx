@@ -1,8 +1,10 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { useLanguage } from '../../LanguageContext';
 
 export const Hero = () => {
+    const { t } = useLanguage();
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -36,7 +38,7 @@ export const Hero = () => {
                     transition={{ duration: 1, delay: 0.2 }}
                 >
                     <span className="inline-block py-1 px-3 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-white/90 text-sm mb-6 font-medium tracking-wide">
-                        WELCOME TO INTELLECT PRO
+                        {t.hero.welcome}
                     </span>
                 </motion.div>
 
@@ -47,7 +49,7 @@ export const Hero = () => {
                         transition={{ duration: 1, ease: [0.33, 1, 0.68, 1], delay: 0.4 }}
                         className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight"
                     >
-                        School of Future
+                        {t.hero.mainTitle}
                     </motion.h1>
                     <motion.h2
                         initial={{ y: 100 }}
@@ -55,7 +57,7 @@ export const Hero = () => {
                         transition={{ duration: 1, ease: [0.33, 1, 0.68, 1], delay: 0.5 }}
                         className="text-4xl md:text-6xl font-light text-white/90 mt-2"
                     >
-                        in Bishkek
+                        {t.hero.city}
                     </motion.h2>
                 </div>
 
@@ -67,7 +69,7 @@ export const Hero = () => {
                 >
                     <button className="group relative px-8 py-4 bg-white text-slate-900 rounded-full font-semibold overflow-hidden transition-all hover:scale-105 active:scale-95">
                         <span className="relative z-10 flex items-center gap-2">
-                            Book a Tour
+                            {t.hero.bookTour}
                         </span>
                         <div className="absolute inset-0 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out z-0 opacity-10" />
                     </button>

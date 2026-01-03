@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../LanguageContext';
 
 export const Intro = () => {
+    const { t } = useLanguage();
     return (
         <section className="py-24 px-4 bg-white relative overflow-hidden">
             <div className="max-w-4xl mx-auto text-center">
@@ -14,7 +16,7 @@ export const Intro = () => {
                     }}
                     className="text-2xl md:text-4xl font-medium leading-relaxed text-slate-800"
                 >
-                    {"We don’t just prepare specific exams. ".split(" ").map((word, i) => (
+                    {t.intro.line1.split(" ").map((word: string, i: number) => (
                         <motion.span
                             key={i}
                             variants={{
@@ -27,7 +29,7 @@ export const Intro = () => {
                         </motion.span>
                     ))}
                     <br className="hidden md:block" />
-                    {"We shape successful personalities".split(" ").map((word, i) => (
+                    {t.intro.highlight.split(" ").map((word: string, i: number) => (
                         <motion.span
                             key={`highlight-${i}`}
                             variants={{
@@ -39,7 +41,7 @@ export const Intro = () => {
                             {word}
                         </motion.span>
                     ))}
-                    {"by combining deep academic knowledge with vital soft skills.".split(" ").map((word, i) => (
+                    {t.intro.line2.split(" ").map((word: string, i: number) => (
                         <motion.span
                             key={`last-${i}`}
                             variants={{
@@ -65,21 +67,21 @@ export const Intro = () => {
                             <div className="absolute inset-0 opacity-20 bg-[url('/circuit-oyu.svg')] bg-cover bg-center"></div>
                             <span className="text-2xl relative z-10">🇰🇬</span>
                         </div>
-                        <span className="uppercase tracking-widest text-xs font-bold text-[#0A192F]">Traditions</span>
+                        <span className="uppercase tracking-widest text-xs font-bold text-[#0A192F]">{t.intro.traditions}</span>
                     </div>
                     <div className="w-px h-12 bg-slate-200 hidden md:block" />
                     <div className="flex flex-col items-center gap-3">
                         <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-2 shadow-sm border border-slate-100">
                             <span className="text-2xl">🌍</span>
                         </div>
-                        <span className="uppercase tracking-widest text-xs font-bold">Global Mindset</span>
+                        <span className="uppercase tracking-widest text-xs font-bold">{t.intro.globalMindset}</span>
                     </div>
                     <div className="w-px h-12 bg-slate-200 hidden md:block" />
                     <div className="flex flex-col items-center gap-3">
                         <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-2 shadow-sm border border-slate-100">
                             <span className="text-2xl">🤖</span>
                         </div>
-                        <span className="uppercase tracking-widest text-xs font-bold">Innovation</span>
+                        <span className="uppercase tracking-widest text-xs font-bold">{t.intro.innovation}</span>
                     </div>
                 </motion.div>
             </div>

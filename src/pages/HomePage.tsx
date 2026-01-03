@@ -4,7 +4,7 @@ import { Hero } from '../components/home/Hero';
 import { Intro } from '../components/home/Intro';
 import { GoldenTriangle } from '../components/home/GoldenTriangle';
 import { Highlights } from '../components/home/Highlights';
-import { Ecosystem } from '../components/home/Ecosystem';
+import { DaySchedule } from '../components/home/DaySchedule';
 import { FeatureStrip } from '../components/home/FeatureStrip';
 import KeepExploringBlock from '../components/KeepExploringBlock';
 
@@ -39,7 +39,7 @@ const HomePage = () => {
             <Intro />
             <GoldenTriangle />
             <Highlights />
-            <Ecosystem />
+            <DaySchedule />
             <FeatureStrip />
 
             {/* Keep Exploring / Navigation Block */}

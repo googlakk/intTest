@@ -83,3 +83,14 @@ body {
   display: flex;
   width: max-content;
 }
+
+/* Section Divider Styles */
+.section-divider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ornament-border {
+  width: 100%;
+  height: 100%;
+}
